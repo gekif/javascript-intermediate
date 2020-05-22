@@ -1,5 +1,6 @@
 var imageModule = (function (){
     return {
+        // This is the images object we are looping through
         carImages: {
             car1: 'http://codingfaculty.com',
             car2: 'http://codingfaculty.com',
@@ -11,15 +12,25 @@ var imageModule = (function (){
             car8: 'http://codingfaculty.com'
         },
 
+        // This method inserts images
         insertImages: function() {
             var myArguments = '.' + arguments[0];
 
             var imagesContainer = document.querySelector(myArguments);
 
-            console.log(imagesContainer);
+            var output = "<div>";
+
+            for (var key in this.carImages) {
+                output += '<div class="col-lg-3 col-md-4 col-xs-6 thumb">';
+                output += '<a class="thumbnail" href="' + this.carImages[key] + '">';
+                output += '<img class="img-responsive" src="images/'+ key +'.jpg" alt="">';
+                output += '</a>';
+                output += '</div>';
+
+                console.log(output);
+            }
+
+            output += '</div>';
         }
-
-
-
     };
 })();
