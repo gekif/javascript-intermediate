@@ -16,7 +16,7 @@ var imageModule = (function (){
         insertImages: function() {
             var myArguments = '.' + arguments[0];
 
-            var imagesContainer = document.querySelector(myArguments);
+            var imagesContainer = document.querySelectorAll(myArguments);
 
             var output = "<div>";
 
@@ -30,7 +30,9 @@ var imageModule = (function (){
                 console.log(output);
             }
 
-            output += '</div>';
+            for (var i = 0; i < imagesContainer.length; i++) {
+                imagesContainer[i].innerHTML = output;
+            }
         }
     };
 })();
