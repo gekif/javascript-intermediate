@@ -11,6 +11,15 @@ var imageModule = (function (){
             car8: 'http://codingfaculty.com'
         },
 
+        insertImages: function() {
+            var myArguments = '.' + arguments[0];
+
+            var imagesContainer = document.querySelector(myArguments);
+
+            console.log(imagesContainer);
+        }
+
+
 
     };
 })();
